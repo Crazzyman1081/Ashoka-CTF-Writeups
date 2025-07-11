@@ -1,0 +1,1125 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Writeups</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1cd79db6-6019-8028-b217-fa12a2441c3c" class="page sans"><header><h1 class="page-title">Writeups</h1><p class="page-description"></p></header><div class="page-body"><p id="1cd79db6-6019-80c7-a4fc-f4140b045200" class="">
+</p><h1 id="1cd79db6-6019-8084-96ca-efae4baf4cdf" class="">LLM summer :-</h1><figure id="1cd79db6-6019-807a-ad11-f670dcda2241" class="image"><a href="image.png"><img style="width:709.9750366210938px" src="image.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8008-9ca9-f44fac99146b" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{T00_L1TTLE_7RUS7}</code></pre><p id="1cd79db6-6019-805a-97e1-d4410937a030" class="">
+</p><p id="1cd79db6-6019-8008-8ad3-dc3cc62b76b2" class="">
+</p><p id="1cd79db6-6019-809b-8d7b-e9d31c7bb12e" class="">
+</p><h1 id="1cd79db6-6019-801e-8fd3-daae76a29999" class="">Forensics :-</h1><p id="1cd79db6-6019-809f-bb17-cbb90ff79ed0" class="">
+</p><h2 id="1cd79db6-6019-80d0-a23b-c49c5b97b654" class="">Andor’s Systematic Corruption </h2><p id="1cd79db6-6019-80c8-bcc0-f6d42e7ddc5f" class="">
+</p><p id="1cd79db6-6019-8047-90fc-ccea9457b4a4" class="">Opening the file in a hex viewer</p><figure id="1cd79db6-6019-800e-937d-e3aa203b96b4" class="image"><a href="image%201.png"><img style="width:709.9750366210938px" src="image%201.png"/></a></figure><p id="1cd79db6-6019-80ec-8c49-ccb411079a62" class="">
+</p><p id="1cd79db6-6019-8035-969f-c7a2e124b682" class="">we can see some strings where there should be 00 bytes <br/>we know that xorring the text with itself gives us the null bytes so we can try bruteforcing the xor key as we know the first header of a png is  89 50 4E 47 0D 0A 1A 0A <br/></p><p id="1cd79db6-6019-80f8-afdb-cd993b7ee862" class="">Using this script:- </p><p id="1cd79db6-6019-807d-8f19-ca4a1168d829" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8071-aa9d-d19bbd78122a" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def derive_key(ciphertext, key_length, header):
+    key = bytearray(key_length)
+    for i in range(len(header)):
+        key[i % key_length] = ciphertext[i] ^ header[i]
+    return bytes(key)
+
+def test_key(ciphertext, key):
+    dec = bytes([b ^ key[i % len(key)] for i, b in enumerate(ciphertext[:128])])
+    chunks = [b&#x27;IHDR&#x27;, b&#x27;IDAT&#x27;, b&#x27;IEND&#x27;, b&#x27;pHYs&#x27;, b&#x27;tEXt&#x27;]
+    for i in range(len(dec) - 4):
+        if dec[i:i+4] in chunks:
+            return True, dec
+    return False, dec
+
+def main():
+    header = bytes([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])
+    with open(&quot;andor_flag.png&quot;, &quot;rb&quot;) as f:
+        data = f.read()
+
+    for key_len in range(1, 17):
+        key = derive_key(data, key_len, header)
+        if bytes([data[i] ^ key[i % key_len] for i in range(len(header))]) != header:
+            continue
+        ok, sample = test_key(data, key)
+        if ok:
+            print(&quot;Key length:&quot;, key_len)
+            print(&quot;Key (hex):&quot;, key.hex())
+            with open(f&quot;decrypted_{key_len}.png&quot;, &quot;wb&quot;) as out:
+                out.write(bytes([b ^ key[i % key_len] for i, b in enumerate(data)]))
+            break
+
+main()
+</code></pre><p id="1cd79db6-6019-806e-a99b-da8a7e992188" class="">
+</p><p id="1cd79db6-6019-809b-ae22-d6072c330ede" class="">We get the output file</p><figure id="1cd79db6-6019-8084-83c6-cfe352d3afc9" class="image"><a href="decrypted_5.png"><img style="width:668px" src="decrypted_5.png"/></a></figure><p id="1cd79db6-6019-80b1-a1ca-d601261e3c8b" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80a3-9013-e569ab97b677" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{c0rrupt10n_15_b4d}</code></pre><p id="1cd79db6-6019-801c-80fe-c04e898cbd89" class="">
+</p><p id="1cd79db6-6019-8082-9a61-e07e5046125f" class="">
+</p><h2 id="1cd79db6-6019-8093-a0e3-e04a4c16b6a8" class="">Fangs</h2><p id="1cd79db6-6019-8057-abbb-dc4ebff2134b" class="">
+</p><p id="1cd79db6-6019-80ba-8cd1-c18ac8ac05eb" class="">we are given a large jpg file</p><p id="1cd79db6-6019-809f-b3d5-cd46656e7233" class="">
+</p><p id="1cd79db6-6019-8095-84ce-f19084138fd9" class="">if we look into its exif data we can see the following</p><p id="1cd79db6-6019-8043-b905-d65d921df21d" class="">
+</p><figure id="1cd79db6-6019-80c7-89b2-de7095a3a662" class="image"><a href="image%202.png"><img style="width:709.9874877929688px" src="image%202.png"/></a></figure><p id="1cd79db6-6019-8004-948c-de04a9e8a866" class="">
+</p><p id="1cd79db6-6019-806f-8d40-f929b30850fe" class="">from this we can makeout that the last characters of the exif tags makeup our flag so we extract all and we get </p><p id="1cd79db6-6019-80bc-85b3-c85cbb54c393" class="">nKH{a_g__TAm_a}</p><p id="1cd79db6-6019-8081-a24c-cccda5eafa1e" class="">since we know the flag format</p><p id="1cd79db6-6019-80f8-94e5-e5d0e3b6b11e" class="">AKTH{}</p><p id="1cd79db6-6019-80b1-abfe-ec9d90c84748" class="">after replacing we are left with AKTH{a_g_a_m_n}<br/><br/>using the name of the challenge as Fangs we can see it is hinting at FAANG which we know after facebook changed its name to meta is known as MAANG we get our flag<br/><br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80f0-be54-fc27ff1f96fc" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">
+AKTH{m_a_a_n_g}</code></pre><p id="1cd79db6-6019-8091-8b8c-d28751e48437" class="">
+</p><h2 id="1cd79db6-6019-8035-b644-fcbd33e7e0bb" class=""><strong>I got bored and can&#x27;t make another challenge name</strong></h2><p id="1cd79db6-6019-8005-bc33-c5e8b1cf466a" class="">
+</p><p id="1cd79db6-6019-80c3-a3e4-f804faccbaf9" class="">we are given 14 flag files inside a zip files so after extracting it we just run<br/><br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80b7-9977-d21b7b2feb17" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">zsteg -a image_*</code></pre><p id="1cd79db6-6019-802b-bd31-d95169d3a8a1" class="">and we can see the flag in the first image itself </p><figure id="1cd79db6-6019-806c-b8d0-dc57f767143f" class="image"><a href="image%203.png"><img style="width:709.9874877929688px" src="image%203.png"/></a></figure><p id="1cd79db6-6019-80e1-8785-da8fb5d1a094" class="">
+</p><p id="1cd79db6-6019-80e3-ab3a-deef3f077b02" class="">so just reverse in python</p><figure id="1cd79db6-6019-8031-a09e-ccb3ef3ee9c1" class="image"><a href="image%204.png"><img style="width:611px" src="image%204.png"/></a></figure><p id="1cd79db6-6019-80f6-a2c4-cd6b021994bc" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8010-883a-d176883d7f49" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{FOLLOW_PIXEL_CLUB}</code></pre><p id="1cd79db6-6019-80ef-aa71-ed4cedeea4e7" class="">
+</p><h1 id="1cd79db6-6019-804d-8749-e0d23d5c3ae6" class="">OSINT</h1><p id="1cd79db6-6019-8057-b8c4-f2d13cec45d2" class="">
+</p><h2 id="1cd79db6-6019-807b-bbbd-c28fadbe9a64" class=""><strong>Unmarked Rural Roads</strong></h2><p id="1cd79db6-6019-8042-bd20-ccf164f00b53" class="">
+</p><p id="1cd79db6-6019-80e0-bcfa-d350678de72c" class="">initially started by searching for Bright Home Public School we can see there is one nearby Ashoka University which is in Haryana Sonepat<br/><br/><br/></p><figure id="1cd79db6-6019-80e1-b555-f2d0e5385cec" class="image"><a href="image%205.png"><img style="width:709.9750366210938px" src="image%205.png"/></a></figure><p id="1cd79db6-6019-805a-9aea-d415f18500a3" class="">
+</p><p id="1cd79db6-6019-80b4-b901-d9b3d9ec0efd" class="">So just bruteforcing nearby locations we get our flag as</p><p id="1cd79db6-6019-803f-bc45-cdd66a668f9f" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80de-8602-f3675ebdb17b" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{asawarpur}</code></pre><p id="1cd79db6-6019-806f-a0d0-c21c0d3d3720" class="">
+</p><h2 id="1cd79db6-6019-80ed-9d94-e65e50c50af2" class=""><strong>Mr. India</strong></h2><p id="1cd79db6-6019-8023-b42d-fa9967ab503c" class="">
+</p><p id="1cd79db6-6019-80bc-84b5-f49e20830a17" class="">We start by reverse searching the image and see its a loaction in ashoka university itself</p><p id="1cd79db6-6019-80ce-b66a-d87eee1a4373" class="">
+</p><figure id="1cd79db6-6019-8019-8d4f-d9693deb95f1" class="image"><a href="image%206.png"><img style="width:709.9874877929688px" src="image%206.png"/></a></figure><p id="1cd79db6-6019-8001-9651-e33c60da35c7" class="">
+</p><p id="1cd79db6-6019-806b-b440-c9e97dfdac6f" class="">we go here and see the virtual tour of the campus</p><p id="1cd79db6-6019-8026-b221-f0dd8b901d6c" class="">
+</p><figure id="1cd79db6-6019-80a8-bf5e-cd42dab2091f" class="image"><a href="image%207.png"><img style="width:709.9750366210938px" src="image%207.png"/></a></figure><p id="1cd79db6-6019-8048-972d-e285d7d2a28d" class="">
+</p><p id="1cd79db6-6019-8088-b99a-ef06b3c55a59" class="">we “change our angle” and see the name we need on the nameplate making the flag </p><p id="1cd79db6-6019-8094-b643-e726a6d65586" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8049-a340-d5a6bbc2e277" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{priyank_narayan}</code></pre><p id="1cd79db6-6019-800f-bba5-c747b342c544" class="">
+</p><p id="1cd79db6-6019-809b-9dd3-c3d699155bb4" class="">
+</p><h1 id="1cd79db6-6019-803a-9cac-f83b7d7ddd7d" class="">WEB</h1><h2 id="1cd79db6-6019-80d2-b269-e1193c7542c1" class=""><strong>Not Just Bots</strong></h2><p id="1cd79db6-6019-8022-a3ef-ff2807791551" class="">
+</p><p id="1cd79db6-6019-8035-bcba-ef8c500f5aa7" class="">simply going to the robots.txt file, as suggested by the title and the description  on the website. we get our flag </p><figure id="1cd79db6-6019-80fd-a92d-d8b5479d80d4" class="image"><a href="image%208.png"><img style="width:709.9874877929688px" src="image%208.png"/></a></figure><p id="1cd79db6-6019-80f3-9410-ca772b680be8" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80d8-9789-c9a87d8ecacb" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{n0t_11ms.txt} </code></pre><p id="1cd79db6-6019-80de-b200-ed4b4472e898" class="">
+</p><h2 id="1cd79db6-6019-8000-b11b-dd631ed7e94f" class=""><strong>Legion</strong></h2><p id="1cd79db6-6019-8000-b693-d9df02166b0f" class="">
+</p><p id="1cd79db6-6019-8089-8ad9-eb66bb6ef4a7" class="">Not sure if this was the intended way to solve as the hint suggests otherwise but </p><p id="1cd79db6-6019-80c0-a83f-dd02570c8b0a" class="">
+</p><p id="1cd79db6-6019-8030-bea5-e65a6c440b98" class="">first off removing the cookie header from the request we can see the response</p><figure id="1cd79db6-6019-801c-9706-e7df3c473953" class="image"><a href="image%209.png"><img style="width:709.9750366210938px" src="image%209.png"/></a></figure><p id="1cd79db6-6019-80bd-8018-f8ae5d9e00b1" class="">
+</p><p id="1cd79db6-6019-80f1-bfe7-f9cd62b317c8" class="">we start by going to /onions on the site</p><p id="1cd79db6-6019-80a9-93aa-faa1bcf318d1" class="">
+</p><p id="1cd79db6-6019-8012-a4ca-dddbc0ff525c" class="">changing our useragent to be Tor’s useragent and lastly adding the dnt:1 header in our request gives us the flag</p><p id="1cd79db6-6019-80df-bdd5-f2fc38b429ad" class="">
+</p><figure id="1cd79db6-6019-80e7-908a-c4e2316e9299" class="image"><a href="Screenshot_2025-04-06_105057.png"><img style="width:709.9750366210938px" src="Screenshot_2025-04-06_105057.png"/></a></figure><p id="1cd79db6-6019-80c5-ada5-e871013a5960" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80bf-912b-d0ba94111737" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{v33_h4v3_14y3r5_2}</code></pre><p id="1cd79db6-6019-80fa-8697-f8aff72b35f6" class="">
+</p><h2 id="1cd79db6-6019-8032-ae22-c3965169f87b" class=""><strong>Holding the line</strong></h2><p id="1cd79db6-6019-809c-9456-ee0bbdec1aa7" class="">
+</p><p id="1cd79db6-6019-8085-9e5c-d90b2d55cf2a" class="">Welcome, Agent. There&#x27;s a call waiting for you on the phone, the number&#x27;s 65432. You know the address well.</p><p id="1cd79db6-6019-80e5-8570-ee6e23c7b20e" class="">
+</p><p id="1cd79db6-6019-8009-a07c-e0809b8e06de" class="">hmm since we know the address well its probably the CTF sites address only and on port 65432</p><figure id="1cd79db6-6019-80fe-a8ec-c84833b8f339" class="image"><a href="image%2010.png"><img style="width:522px" src="image%2010.png"/></a></figure><p id="1cd79db6-6019-804e-b38c-cfb4e6bfe9d3" class="">we can see the server is responding us with Marco in different time intervals each time we send “Polo”</p><p id="1cd79db6-6019-8047-8809-fcead828ff68" class="">so we can write a script to track the time taken between each iteration</p><p id="1cd79db6-6019-80e9-93b6-c20cbce70db4" class="">
+</p><p id="1cd79db6-6019-80b6-8d61-fcea364edaf9" class="">Using this script</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-803f-91b7-fd8df0a86e24" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import socket
+import time
+
+HOST = &#x27;ctf.ieee-ashoka.in&#x27;
+PORT = 65432
+
+def main():
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((HOST, PORT))
+        data = s.recv(1024)
+        print(f&quot;Received: {data.decode().strip()}&quot;)
+        for i in range(200):  
+            start = time.time()
+            s.sendall(b&#x27;Polo\n&#x27;)  
+            data = s.recv(1024)
+            end = time.time()
+
+            response = data.decode().strip()
+            duration = end - start
+            print(f&quot;iteration {i+1}: Received &#x27;{response}&#x27; in {duration:.4f} seconds&quot;)
+
+main()
+</code></pre><p id="1cd79db6-6019-8011-a911-d752d0d9c426" class="">
+</p><p id="1cd79db6-6019-80d7-b105-f2be16de0609" class="">we can see the output from the server as</p><figure id="1cd79db6-6019-80a4-86a1-d44a67a70aa1" class="image"><a href="image%2011.png"><img style="width:703px" src="image%2011.png"/></a></figure><p id="1cd79db6-6019-80a9-bb0f-d39dcbca7fc7" class="">
+</p><p id="1cd79db6-6019-8095-ae85-f30a8d9cfb68" class="">Something like this so we can see its either 1.xx seconds or 0.xx seconds or 3.xx seconds</p><p id="1cd79db6-6019-804f-98fe-e33cda3c2f4b" class="">
+</p><p id="1cd79db6-6019-8042-88a4-d1c13d968c93" class="">so we can map these as </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8007-aa96-df70ea42971f" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">01310131300031011031130000130103101031111130110311111301003111111310110</code></pre><p id="1cd79db6-6019-803b-abf1-c410bba17a38" class="">seeing as we have the least amount of 3’s they probably correspond to spaces so lets change that</p><p id="1cd79db6-6019-804b-bbb1-fe271f8f8e07" class="">now we have</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80c5-b44b-e9596739fac4" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">01 101 1 000 10110 11 00001 010 1010 11111 0110 11111 0100 111111 10110</code></pre><p id="1cd79db6-6019-8010-9cbc-c12b99f519ec" class="">which is morso code for</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8077-ab46-e32ed9b43c9c" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTS(M4RC0P0L�(</code></pre><p id="1cd79db6-6019-8017-9823-eb9ba6db873f" class="">not quite right but we can see what the author was going for with the flag so after fixing it up a bit we have</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8082-ad93-cf4cf3b4c70f" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH(M4RC0P0L0}</code></pre><p id="1cd79db6-6019-809c-a9d7-dab5475d302a" class="">
+</p><h2 id="1cd79db6-6019-80d5-be37-f58c4e82e4c9" class=""><strong>Daddy Issues</strong></h2><p id="1cd79db6-6019-8015-b743-faf4fb17fe3e" class="">opening up the request in burpsuite</p><figure id="1cd79db6-6019-8002-8074-f9a9660b0248" class="image"><a href="image%2012.png"><img style="width:709.9750366210938px" src="image%2012.png"/></a></figure><p id="1cd79db6-6019-806f-bb43-de14fc4b5ced" class="">
+</p><p id="1cd79db6-6019-8024-8299-c774ec2a01ed" class="">we can see that there is a hidden url at the end of the servers response</p><p id="1cd79db6-6019-80d0-a631-c3200f3315c2" class="">
+</p><p id="1cd79db6-6019-80b1-ae94-d1208892fa78" class="">and from the link on the page at the top we first get here</p><figure id="1cd79db6-6019-8047-958a-fe4bb46854ef" class="image"><a href="image%2013.png"><img style="width:709.9750366210938px" src="image%2013.png"/></a></figure><p id="1cd79db6-6019-8012-9c7a-e573770c21a3" class="">
+</p><p id="1cd79db6-6019-8046-8db9-db9ccbef061c" class="">decoding that string from base64 gives us </p><p id="1cd79db6-6019-801f-981d-df668448a66a" class="">
+</p><p id="1cd79db6-6019-8056-abcb-ef9e522ef516" class="">159.89.175.173:63453</p><p id="1cd79db6-6019-803a-a285-c9a8a0cb79e4" class="">
+</p><p id="1cd79db6-6019-802e-b9f0-fc0c928df46b" class="">from where we get our static_key.pem file which we use to decode the capture file we got from </p><p id="1cd79db6-6019-8039-bbb6-fcaa783e44db" class="">
+</p><figure id="1cd79db6-6019-80d1-a2b8-e0c076defb4f" class="image"><a href="image%2014.png"><img style="width:709.9874877929688px" src="image%2014.png"/></a></figure><p id="1cd79db6-6019-80ae-a942-d1f0a2564229" class="">
+</p><p id="1cd79db6-6019-80e1-a676-ee6815986bb1" class="">opening the pcap file in wireshark and going to prefrences</p><figure id="1cd79db6-6019-80e6-85be-deb97983c9ef" class="image"><a href="image%2015.png"><img style="width:709.9874877929688px" src="image%2015.png"/></a></figure><p id="1cd79db6-6019-802b-8fff-efc0082917cb" class="">then setting the file as the key here</p><p id="1cd79db6-6019-80d3-a9e4-db57ae429902" class="">
+</p><p id="1cd79db6-6019-8069-becc-cd38d2737f2d" class="">
+</p><p id="1cd79db6-6019-80ac-ad80-c058d155e2a1" class="">then refreshing wireshark after hitting apply and searching for the string AKTH{ </p><p id="1cd79db6-6019-80ed-b722-d3de8b6dfa1e" class="">we get</p><figure id="1cd79db6-6019-8053-a348-e6e508f6426c" class="image"><a href="image%2016.png"><img style="width:709.9750366210938px" src="image%2016.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80f4-93bf-c2b6e9b64635" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{jawWired}</code></pre><p id="1cd79db6-6019-802d-b5e1-d3eecafcdfc2" class="">
+</p><h2 id="1cd79db6-6019-80a6-a8c5-e461962a7bb0" class=""><strong>Fib&#x27;s Eve </strong></h2><h3 id="1cd79db6-6019-8089-9ea7-d52af0510b3f" class="">will not bore you with the WHOLE PROCESS of getting to the flag this one was a really guessy/farfetched one so here is the solution</h3><p id="1cd79db6-6019-80d9-8853-f2711b70dc9c" class="">
+</p><p id="1cd79db6-6019-800f-979a-f0ff626c1820" class="">the 2 sequences we are looking for are </p><p id="1cd79db6-6019-80c1-8cc1-e6403c588825" class="">fibonacci sequence and the sieve of eratosthenes </p><p id="1cd79db6-6019-80b8-8238-f7ded909eec7" class="">so fib and s eve</p><p id="1cd79db6-6019-8006-a5e9-ceea1323f587" class="">
+</p><p id="1cd79db6-6019-80ec-bb77-e355cfa6da7a" class="">then from here we get that that the pages we need to select are from the fib sequence so and the description tells us to skip 6 so we skip the first six and start from the 8th page which is the because 8 is 7th in fib sequence so we start from 8th we have<br/><br/>(The reason for picking fib as the pages is also that there are total 46368 pages which is not a prime and a term of the fib series)<br/></p><p id="1ce79db6-6019-8082-a6d6-e37d37fe8aa6" class="">
+</p><p id="1ce79db6-6019-80a2-8425-eced905b0c6c" class="">
+</p><p id="1cd79db6-6019-80ea-9309-cfe48417d5a1" class="">
+</p><p id="1cd79db6-6019-8015-aa45-d7ed4e6493f0" class="">
+</p><figure id="1cd79db6-6019-809f-b4c1-e19c02a0801c" class="image"><a href="image%2017.png"><img style="width:709.9750366210938px" src="image%2017.png"/></a></figure><p id="1cd79db6-6019-8004-958d-f4da96d61c57" class="">
+</p><p id="1cd79db6-6019-8083-8c44-e8d4a1891cd6" class="">alot to take in but basically we can spot some fragments of the flag that are not supposed to be a part of base64 charset which are { _ } these</p><p id="1cd79db6-6019-800f-9dd2-cffeb8dc2ebb" class="">
+</p><p id="1cd79db6-6019-808d-93ce-e3a3bf091a6b" class="">so we can make many guesses and finally reach the solution that we have to use the sieve of eratosthenes (just primes)  as our indexes as the characters are on indexes which are prime numbers so writing a pretty basic script we can achieve this</p><p id="1cd79db6-6019-8065-8eaf-f6e0f1f9d6c0" class="">
+</p><figure id="1cd79db6-6019-80af-8851-dc6f536893e2"><div class="source"><a href="fib_pages.txt">fib_pages.txt</a></div></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-8092-b2c5-d07966689817" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">def sieve(n):
+    primes = [True] * (n + 1)
+    primes[0] = primes[1] = False
+    p = 2
+    while p * p &lt;= n:
+        if primes[p]:
+            for i in range(p * p, n + 1, p):
+                primes[i] = False
+        p += 1
+    return [i for i, is_prime in enumerate(primes) if is_prime]
+    #sieve to be fancy :P
+
+max_lines = 500 
+primes = sieve(4000)[:max_lines]
+
+with open(&quot;fib_pages.txt&quot;, &quot;r&quot;) as f:
+    lines = [line.strip() for line in f if line.strip()]
+
+result = []
+for i, line in enumerate(lines):
+    if i &lt; len(primes):
+        prime_index = primes[i]
+        if prime_index &lt; len(line):
+            result.append(line[prime_index])
+
+final_string = &#x27;&#x27;.join(result)
+print(final_string)</code></pre><p id="1cd79db6-6019-80fe-8924-fe17386d0cbf" class="">
+</p><p id="1cd79db6-6019-80ea-a381-da6debb63e46" class="">we get a string </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80f9-8747-fb5134c776b4" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">W8WH8mAKTH{5ub4n_pr0uD}Al</code></pre><p id="1cd79db6-6019-80bd-ad21-ec151dfb05db" class="">skipping the first 6 and removing the padding at the end we have our flag</p><p id="1cd79db6-6019-80fc-beff-f366e7013e01" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd79db6-6019-80df-b4cd-ea9d3c7f7e43" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{5ub4n_pr0uD}</code></pre><p id="1ce79db6-6019-809d-b5eb-c1e868fe9c19" class="">
+</p><p id="1ce79db6-6019-802c-93ce-eb42dd1bcc07" class="">
+</p><h2 id="1cd79db6-6019-8080-9a4f-c76281c8f3ff" class="">LAST wave too lazy to categorize now: -</h2><p id="1ce79db6-6019-80bd-9843-dfd7101f9cad" class="">
+</p><h2 id="1ce79db6-6019-80a5-962f-ee1af22fb71d" class="">AI Winter</h2><p id="1ce79db6-6019-8046-8f24-f0d335d1f8d5" class="">
+</p><p id="1ce79db6-6019-80ec-9b0a-ca7796247464" class="">found that the response from the AI had trailing hidden characters</p><p id="1ce79db6-6019-808d-9b8e-cf571b7b7dab" class="">got that we have to convert it into tabs and spaces because the challenge was clearly hinting at “stegsnow”</p><p id="1ce79db6-6019-8037-be65-cde6e07fdc92" class=""><br/>Now for the way in which we had to replace the tabs and spaces for the unicode characters i just wrote a bruteforce script with chatgpt xd.<br/><br/><br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce79db6-6019-8049-834f-e7de09db23f5" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import os
+import re
+from pathlib import Path
+
+invisible = &quot;&quot;&quot;the strings here of unicode characters&quot;&quot;&quot;
+binary = &quot;&quot;
+for char in invisible:
+    if char == &#x27;\u200c&#x27;:
+        binary += &#x27;0&#x27;
+    elif char == &#x27;\u200d&#x27;:  
+        binary += &#x27;1&#x27;
+
+out_dir = Path(&quot;grids&quot;)
+out_dir.mkdir(exist_ok=True)
+count = 0
+for rows in range(1, 21):
+    for cols in range(1, 201):
+        if rows * cols &gt; len(binary):
+            continue
+
+        sliced = binary[:rows * cols]
+        lines = [
+            &#x27;&#x27;.join(
+                &#x27;\u200c&#x27; if bit == &#x27;0&#x27; else &#x27;\u200d&#x27;
+                for bit in sliced[r*cols:(r+1)*cols]
+            ) for r in range(rows)
+        ]
+
+        replaced = &quot;\n&quot;.join(
+            line.replace(&#x27;\u200c&#x27;, &#x27; &#x27;).replace(&#x27;\u200d&#x27;, &#x27;\t&#x27;)
+            for line in lines
+        )
+
+        file_path = out_dir / f&quot;grid{rows}x{cols}.txt&quot;
+        with open(file_path, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:
+            f.write(replaced)
+        count += 1
+
+print(f&quot;:bricks: Generated {count} grid files in {out_dir}/&quot;) </code></pre><p id="1ce79db6-6019-8097-8b9e-c93414b435d2" class="">
+</p><p id="1ce79db6-6019-80bc-9445-e296ffa8c054" class="">Now also wrote a simple bashscript to run stegsnow on all the grids that were created <br/>this is way faster than just guessing.<br/></p><p id="1ce79db6-6019-80a4-9667-c2c684cab030" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce79db6-6019-8082-b896-e741e31eba8d" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">for file in grid*; do
+echo &quot;checking: $file&quot;
+stegsnow -C &quot;$file&quot;
+done</code></pre><p id="1ce79db6-6019-8045-8d77-f50219e9895b" class="">
+</p><p id="1ce79db6-6019-8039-905a-d7816138a386" class="">then we get our flag</p><p id="1ce79db6-6019-805a-a28c-d36f6696d5e9" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce79db6-6019-80e5-9cd0-d02179063ca6" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{SN0-W4Y} #could not be exact becausee i no longer have the chall file xd the site was taken down when writing this</code></pre><p id="1ce79db6-6019-8068-bf2f-eb26a176b447" class="">
+</p><h2 id="1ce79db6-6019-8044-a731-f5a9fbb3f6db" class="">Deep</h2><p id="1ce79db6-6019-8044-8a43-e1b5401a58ef" class="">
+</p><p id="1ce79db6-6019-801d-8ab5-da49207298f2" class="">run binwalk on the image to extract a zip file from it that is password locked</p><p id="1ce79db6-6019-8064-8e23-f60887d7a30a" class="">in the exifdata of the image we can also see a google drive link</p><p id="1ce79db6-6019-80c7-abe3-ef91f55165db" class="">on the google drive link we find an X account</p><p id="1ce79db6-6019-80ab-b0b5-f61182080ca5" class="">the X account has some seemingly random information but we can make a guess that this information is used to build up a wordlist (I have solved a similar challenge before)<br/>build a wordlist using<br/>samuel, Ameera and 1995 as the birth year<br/></p><p id="1ce79db6-6019-80ac-87d6-e8830eb56bd5" class="">bruteforce the zip with the created wordlist</p><p id="1ce79db6-6019-80e5-8cf2-d082efda93e9" class="">After finding the correct password we have 2 files </p><p id="1ce79db6-6019-809a-9094-c2da10f78717" class="">
+</p><p id="1ce79db6-6019-8041-83f6-c287aae2453a" class="">file1.txt and file2.txt </p><p id="1ce79db6-6019-804f-9338-d66e27e33b03" class="">they are almost the same but searching AKTH{ in file 2 gives back a result</p><p id="1ce79db6-6019-80ce-aaaf-e7e02b51e624" class="">
+</p><p id="1ce79db6-6019-801d-a0ee-c5df17942ea9" class="">so we take the difference of the two files (so the only unique characters)</p><p id="1ce79db6-6019-8075-97f3-e76f2435b2f4" class="">
+</p><p id="1ce79db6-6019-80a2-a431-d5ec55d93b87" class="">and we find our flag</p><p id="1ce79db6-6019-80fb-a9e2-e8948dd45103" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce79db6-6019-8039-b730-fdaf414ae380" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{w0rdl15t_m4g1c} #not sure same reason as above </code></pre><p id="1ce79db6-6019-8056-a7c1-c2875fff75f9" class="">
+</p><p id="1ce79db6-6019-8057-9834-cdecb805af8d" class="">Crypto </p><p id="1ce79db6-6019-8020-84b9-cd60d22845ba" class="">
+</p><p id="1ce79db6-6019-806a-8263-ea602ec3ec69" class="">not going to explain the whole thing but</p><p id="1ce79db6-6019-807b-8dea-d5ec1930752a" class="">
+</p><p id="1ce79db6-6019-80ee-9d65-e2db3f1170f6" class="">we dont have to check for block 0 as we know it should be </p><p id="1ce79db6-6019-8019-92b1-e989f4ad5f8f" class="">AKTH so bruteforcing it we also see that it corresponds to the k1lo function</p><p id="1ce79db6-6019-8027-a6a6-dbba411a23bf" class="">
+</p><p id="1ce79db6-6019-803c-a801-f7ec8a17db88" class="">we run this code to find it for d3lt4</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce79db6-6019-80f7-bdda-f7996f5af474" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import itertools
+from fractions import Fraction as F
+
+# Function Definitions
+def d3lt4(msg_x1):
+    if len(msg_x1) == 1:
+        return ord(msg_x1)
+    msg_x1 = msg_x1[::-1]
+    _countdown = len(msg_x1) - 1
+    vX, vY = F(ord(msg_x1[0]), _countdown).denominator, F(ord(msg_x1[0]), _countdown).numerator
+    _countdown -= 1
+    for idx in range(1, len(msg_x1) - 1):
+        x = ord(msg_x1[idx]) + F(vX, vY)
+        vY, vX = x.denominator, x.numerator
+        vX, vY = vY, _countdown * vX
+        _countdown -= 1
+    x = ord(msg_x1[-1]) + F(vX, vY)
+    vX, vY = x.denominator, x.numerator
+    return (vY, vX)
+
+def k1lo(msg_b2):
+    if len(msg_b2) == 1:
+        return ord(msg_b2)
+    msg_b2 = msg_b2[::-1]
+    pwr = (-1) ** len(msg_b2)
+    f_ = F(ord(msg_b2[0]), pwr)
+    a1, b2 = f_.denominator, f_.numerator
+    pwr *= -1
+    for idx in range(1, len(msg_b2) - 1):
+        temp = ord(msg_b2[idx]) + F(a1, b2)
+        b2, a1 = temp.denominator, temp.numerator
+        a1, b2 = b2, pwr * a1
+        pwr *= -1
+    temp = ord(msg_b2[-1]) + F(a1, b2)
+    a1, b2 = temp.denominator, temp.numerator
+    return (b2, a1)
+
+def zx9t(msg_c3):
+    if len(msg_c3) == 1:
+        return ord(msg_c3)
+    msg_c3 = msg_c3[::-1]
+    chaos = (-1) ** int(F(len(msg_c3), len(msg_c3)**2))
+    start = F(ord(msg_c3[0]), chaos)
+    l1, l2 = start.denominator, start.numerator
+    chaos **= -1
+    chaos = int(chaos)
+    for idx in range(1, len(msg_c3) - 1):
+        res = ord(msg_c3[idx]) + F(l1, l2)
+        l2, l1 = res.denominator, res.numerator
+        l1, l2 = l2, chaos * l1
+        chaos **= -1
+        chaos = int(chaos)
+    final = ord(msg_c3[-1]) + F(l1, l2)
+    l1, l2 = final.denominator, final.numerator
+    return (l2, l1)
+
+# Data
+tuples = [(29490244, 453603), (28735866, 233597), (59585246, 551617), 
+          (113048061, 1076555), (65009469, 969989)]
+remaining_tuples = tuples[1:]
+chars = [chr(i) for i in range(32, 127)]
+functions = [d3lt4, k1lo, zx9t]
+func_names = [&quot;d3lt4&quot;, &quot;k1lo&quot;, &quot;zx9t&quot;]
+
+# Start with known prefix
+flag = &quot;AKTH{&quot;
+segments = [&quot;AKTH&quot;]
+counts = {&quot;d3lt4&quot;: 0, &quot;k1lo&quot;: 1, &quot;zx9t&quot;: 0}  # k1lo used once
+
+# Build flag incrementally
+for i, target in enumerate(remaining_tuples, 1):
+    candidates = []
+    if i == 1:  # Second segment starts with &#x27;{&#x27;
+        for s in itertools.product(chars, repeat=3):
+            seg = &quot;{&quot; + &#x27;&#x27;.join(s)
+            for j, func in enumerate(functions):
+                if func(seg) == target and (func_names[j] != &quot;d3lt4&quot; or counts[&quot;d3lt4&quot;] &lt; 2) and \
+                   (func_names[j] != &quot;k1lo&quot; or counts[&quot;k1lo&quot;] &lt; 2) and \
+                   (func_names[j] != &quot;zx9t&quot; or counts[&quot;zx9t&quot;] &lt; 1):
+                    candidates.append((seg, func_names[j]))
+    else:  # Full 4-char segments
+        for s in itertools.product(chars, repeat=4):
+            seg = &#x27;&#x27;.join(s)
+            for j, func in enumerate(functions):
+                if func(seg) == target and (func_names[j] != &quot;d3lt4&quot; or counts[&quot;d3lt4&quot;] &lt; 2) and \
+                   (func_names[j] != &quot;k1lo&quot; or counts[&quot;k1lo&quot;] &lt; 2) and \
+                   (func_names[j] != &quot;zx9t&quot; or counts[&quot;zx9t&quot;] &lt; 1):
+                    candidates.append((seg, func_names[j]))
+    
+    # Select candidate (highest &quot;confidence&quot; = first match)
+    if candidates:
+        seg, func_name = candidates[0]  # Could rank by flag-like properties
+        flag += seg
+        segments.append(seg)
+        counts[func_name] += 1
+        print(f&quot;Tuple {i}: {seg} with {func_name}, Flag so far: {flag}&quot;)
+    else:
+        print(f&quot;No match for tuple {i}&quot;)
+        break
+
+# Finalize flag
+flag += &quot;}&quot;
+print(&quot;Final Flag:&quot;, flag)
+print(&quot;Function counts:&quot;, counts)</code></pre><p id="1ce79db6-6019-80a0-a0f2-cfe487b36a3c" class="">
+</p><p id="1ce79db6-6019-808b-bbb7-d12fdde90b8a" class="">From this we were only able to get the second block was matching</p><p id="1ce79db6-6019-808f-ba14-d45aa3f648b4" class="">
+</p><p id="1ce79db6-6019-80a8-95c7-dae0f678d73c" class="">d3lt4 → {Def</p><p id="1ce79db6-6019-80bc-af17-ea444d094e17" class="">
+</p><p id="1ce79db6-6019-8064-904e-f4a50ecebf75" class="">then we run this code</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce79db6-6019-807d-b088-efd2a2e68958" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">import itertools
+import string
+from fractions import Fraction as F
+
+def d3lt4(msg_x1):
+    if len(msg_x1) == 1:
+        return ord(msg_x1)
+    msg_x1 = msg_x1[::-1]
+    _countdown = len(msg_x1) - 1
+    vX, vY = F(ord(msg_x1[0]), _countdown).denominator, F(ord(msg_x1[0]), _countdown).numerator
+    _countdown -= 1
+    for idx in range(1, len(msg_x1) - 1):
+        x = ord(msg_x1[idx]) + F(vX, vY)
+        vY, vX = x.denominator, x.numerator
+        vX, vY = vY, _countdown * vX
+        _countdown -= 1
+    x = ord(msg_x1[-1]) + F(vX, vY)
+    vX, vY = x.denominator, x.numerator
+    return (vY, vX)
+
+def k1lo(msg_b2):
+    if len(msg_b2) == 1:
+        return ord(msg_b2)
+    msg_b2 = msg_b2[::-1]
+    pwr = (-1) ** len(msg_b2)
+    f_ = F(ord(msg_b2[0]), pwr)
+    a1, b2 = f_.denominator, f_.numerator
+    pwr *= -1
+    for idx in range(1, len(msg_b2) - 1):
+        temp = ord(msg_b2[idx]) + F(a1, b2)
+        b2, a1 = temp.denominator, temp.numerator
+        a1, b2 = b2, pwr * a1
+        pwr *= -1
+    temp = ord(msg_b2[-1]) + F(a1, b2)
+    a1, b2 = temp.denominator, temp.numerator
+    return (b2, a1)
+
+def zx9t(msg_c3):
+    if len(msg_c3) == 1:
+        return ord(msg_c3)
+    msg_c3 = msg_c3[::-1]
+    chaos = (-1) ** int(F(len(msg_c3), len(msg_c3)**2))
+    start = F(ord(msg_c3[0]), chaos)
+    l1, l2 = start.denominator, start.numerator
+    chaos **= -1
+    chaos = int(chaos)
+    for idx in range(1, len(msg_c3) - 1):
+        res = ord(msg_c3[idx]) + F(l1, l2)
+        l2, l1 = res.denominator, res.numerator
+        l1, l2 = l2, chaos * l1
+        chaos **= -1
+        chaos = int(chaos)
+    final = ord(msg_c3[-1]) + F(l1, l2)
+    l1, l2 = final.denominator, final.numerator
+    return (l2, l1)
+
+encrypted_tuples = [
+    (29490244, 453603),
+    (28735866, 233597),
+    (59585246, 551617),
+    (113048061, 1076555),
+    (65009469, 969989)
+]
+
+fixed_segments = [&quot;AKTH&quot;, &quot;{Def&quot;]
+remaining_usage = {&quot;d3lt4&quot;: 1, &quot;k1lo&quot;: 1, &quot;zx9t&quot;: 1}
+allowed_chars = string.ascii_lowercase + string.digits + &quot;_&quot;
+allowed_chars_seg4 = string.ascii_letters + string.digits + &quot;{}_&quot;
+segment_length = 4
+functions = [d3lt4, k1lo, zx9t]
+func_names = [&quot;d3lt4&quot;, &quot;k1lo&quot;, &quot;zx9t&quot;]
+
+def build_candidates(target, allowed_chars, segment_length, require_brace=False):
+    cand = {fname: [] for fname in func_names}
+    for s in itertools.product(allowed_chars, repeat=segment_length):
+        seg = &#x27;&#x27;.join(s)
+        if require_brace and &#x27;}&#x27; not in seg:
+            continue
+        for f, fname in zip(functions, func_names):
+            if f(seg) == target:
+                cand[fname].append(seg)
+    return cand
+
+cand_seg2 = build_candidates(encrypted_tuples[2], allowed_chars, segment_length, require_brace=False)
+cand_seg3 = build_candidates(encrypted_tuples[3], allowed_chars, segment_length, require_brace=False)
+cand_seg4 = build_candidates(encrypted_tuples[4], allowed_chars_seg4, segment_length, require_brace=True)
+
+print(&quot;Candidates for seg2:&quot;)
+for fname, segs in cand_seg2.items():
+    print(f&quot;  {fname}: {segs}&quot;)
+print(&quot;Candidates for seg3:&quot;)
+for fname, segs in cand_seg3.items():
+    print(f&quot;  {fname}: {segs}&quot;)
+print(&quot;Candidates for seg4:&quot;)
+for fname, segs in cand_seg4.items():
+    print(f&quot;  {fname}: {segs}&quot;)
+
+solutions = []
+for fname2, segs2 in cand_seg2.items():
+    for s2 in segs2:
+        for fname3, segs3 in cand_seg3.items():
+            if fname3 == fname2:
+                continue
+            for s3 in segs3:
+                for fname4, segs4 in cand_seg4.items():
+                    if fname4 == fname2 or fname4 == fname3:
+                        continue
+                    for s4 in segs4:
+                        full_flag = fixed_segments[0] + fixed_segments[1] + s2 + s3 + s4
+                        solutions.append((full_flag, (fname2, fname3, fname4)))
+
+if solutions:
+    print(&quot;\nCandidate full flag(s) found:&quot;)
+    for flag, assignment in solutions:
+        print(&quot;Flag:&quot;, flag, &quot;with function assignment for seg2,seg3,seg4:&quot;, assignment)
+else:
+    print(&quot;No full flag candidate found under current constraints.&quot;)
+</code></pre><p id="1ce79db6-6019-8046-9bd5-ea744c192789" class="">
+</p><p id="1ce79db6-6019-80cd-a9c8-f3adf3c4a7d6" class="">
+</p><p id="1ce79db6-6019-80bb-91bb-cc45d6f0c40e" class="">after that this code gives us this</p><p id="1ce79db6-6019-80e2-8fa5-ec69af339fb3" class="">
+</p><p id="1ce79db6-6019-80f6-95d5-c541710188cb" class="">
+</p><figure id="1ce79db6-6019-80d8-82b1-c043fd770d0c" class="image"><a href="image%2018.png"><img style="width:423px" src="image%2018.png"/></a></figure><p id="1ce79db6-6019-806d-8429-ce45e74c7b11" class="">
+</p><p id="1ce79db6-6019-80a0-b889-d515d0ae3e9e" class="">now we are missing the only last block</p><p id="1ce79db6-6019-8029-a6d5-c27c47f8179c" class="">we currently have</p><p id="1ce79db6-6019-8084-a7f4-ea91a15ce645" class="">
+</p><p id="1ce79db6-6019-801d-91f8-ff7117179c47" class="">AKTH{Defl4gging_</p><p id="1ce79db6-6019-802f-8208-d5cd8d10c931" class="">
+</p><p id="1ce79db6-6019-8012-97e0-d35c0b39fda3" class="">and I just guessed the last word :P       </p><p id="1ce79db6-6019-8018-839e-ddf5d295f3e9" class="">which was C0de</p><p id="1ce79db6-6019-80c8-ada7-cc3b8cb6d963" class="">
+</p><p id="1ce79db6-6019-80ca-bb81-d02dad3ec8d5" class="">making our flag </p><p id="1ce79db6-6019-809c-b018-fbe79c8a218c" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ce79db6-6019-809f-94ca-d6de9c575ca4" class="code"><code class="language-Python" style="white-space:pre-wrap;word-break:break-all">AKTH{Defl4gging_C0de}</code></pre><p id="1ce79db6-6019-80da-82d7-c26b05facb48" class="">
+</p><p id="1ce79db6-6019-80e2-b90f-f8d541652167" class="">DONT EVEN ASK ME ABOU THIS CHALLENGE I HAD AN AI FIELD DAY WITH THIS ONE</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
